@@ -1,15 +1,6 @@
-const dayWeek = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"][new Date().getDay()];
-// let calcYear = (day.getDay() - 5) + (day.getMonth() - 10) + (day.getFullYear() - 4);
+for(let year = 2014; year <= 2050; year++) {
+    let date = new Date(`1/1/${year}`);
+    let isSunday = date.getDay() === 0;
 
-// let getSun = day + calcYear;
-
-// console.log(getSun);
-
-let now = new Date();
-let start = new Date(now.getFullYear(), 0, 0);
-let diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
-let oneDay = 1000 * 60 * 60 * 24;
-let day = Math.floor(diff / oneDay);
-console.log('Day of year: ' + day);
-
-if (day)
+    isSunday && console.log(`The 1st January of ${year} year is Sunday)`)
+}
